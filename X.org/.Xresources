@@ -9,9 +9,9 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
 ! Set the font
-!URxvt.font: xft:monaco:size=10
-!URxvt.letterSpace: -1
-!URxvt.lineSpace: -2
+URxvt.font: xft:DejavuSansMono:size=10
+URxvt.letterSpace: -1
+URxvt.lineSpace: -1
 
 ! Disable scrollbar
 URxvt.scrollBar: false
