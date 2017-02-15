@@ -178,14 +178,17 @@ bar {
 # Configure window borders for specific applications
 for_window [class="URxvt"] border pixel 0
 for_window [class="Chromium"] border pixel 0
+for_window [class="jetbrains-studio"] border pixel 0
 
 # Assign applications to specific workspaces
 assign [class="Chromium"] → $workspace2
+assign [class="jetbrains-studio"] → $workspace3
 
 # Configure floating mode for specific applications
 for_window [class="Lxappearance"] floating enable
 for_window [class="Keepassx2"] floating enable
 for_window [class="Qtconfig-qt4"] floating enable
+for_window [class="jetbrains-studio"] floating enable
 
 # Configure all windows to focus when opened
 for_window [class="^.*"] focus
