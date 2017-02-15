@@ -46,7 +46,8 @@ bindsym $mod+space exec rofi -modi run -show run
 
 # change focus
 bindsym $mod+Tab focus right
-bindsym $mod+Shift+Tab focus left
+bindsym $mod+Shift+Tab focus mode_toggle
+bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 
@@ -75,7 +76,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+#bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -86,7 +87,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+#bindsym $mod+Alt+Ta focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
