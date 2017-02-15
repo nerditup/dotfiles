@@ -44,6 +44,9 @@ bindsym $mod+space exec rofi -modi run -show run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Update the desktop background (from unsplash)
+bindsym $mod+Shift+w exec ~/.fehbg
+
 # change focus
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus mode_toggle
