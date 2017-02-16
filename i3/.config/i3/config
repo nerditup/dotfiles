@@ -47,6 +47,10 @@ bindsym $mod+space exec rofi -modi run -show run
 # Update the desktop background (from unsplash)
 bindsym $mod+Shift+w exec ~/.fehbg
 
+# Switch Workspaces with the arrow keys
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
 # change focus
 bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus mode_toggle
@@ -55,10 +59,10 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
+#bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
