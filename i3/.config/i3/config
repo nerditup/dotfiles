@@ -185,10 +185,11 @@ assign [class="Chromium"] → $workspace2
 assign [class="jetbrains-studio"] → $workspace3
 
 # Configure floating mode for specific applications
-for_window [class="Lxappearance"] floating enable
-for_window [class="Keepassx2"] floating enable
-for_window [class="Qtconfig-qt4"] floating enable
-for_window [class="jetbrains-studio"] floating enable
+#for_window [class="Lxappearance"] floating enable
+#for_window [class="Keepassx2"] floating enable
+#for_window [class="Qtconfig-qt4"] floating enable
+#for_window [class="jetbrains-studio"] floating enable
+for_window [class="^.*"] floating enable
 
 # Configure all windows to focus when opened
 for_window [class="^.*"] focus
