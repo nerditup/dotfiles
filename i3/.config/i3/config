@@ -4,6 +4,8 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
+# This file has been modified for my personal setup, taken from many
+# online resources
 
 # i3 config file (v4)
 #
@@ -11,20 +13,20 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:DejaVu Sans Mono 10
+# Font for window titles. Will also be used by the bar 
+# unless a different font is used in the bar {} block below.
+font pango:DejaVu Sans Mono 18
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# Title bars with padding.
+# We first set the titlebar font size to a larger font size than desired
+# to get a good padding amount. We then use pango markup to force i3 to
+# print the desired font size. This gives us large titlebars with a small
+# font.
+for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'> > %title</span>"
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# Set global foreground and background colors
+set $fg #c5c8c6
+set $bg #263238
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -35,14 +37,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+# start rofi (a program launcher)
 bindsym $mod+space exec rofi -modi run -show run
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Update the desktop background (from unsplash)
 bindsym $mod+Shift+w exec --no-startup-id ~/.fehbg
@@ -94,7 +90,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+Alt+Ta focus mode_toggle
+#bindsym $mod+Alt+Tab focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -171,18 +167,29 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    font pango:DejaVu Sans Mono 10
 	position top
 	colors { background #263238 }
         status_command i3status
 }
 
-# Configure window borders for specific applications
-for_window [class="URxvt"] border pixel 0
-for_window [class="Chromium"] border pixel 0
-for_window [class="jetbrains-studio"] border pixel 0
+# Configure all windows to have no border
+for_window [class="^.*"] border normal 0
+
+# Configure all windows to focus when opened
+for_window [class="^.*"] focus
 
 # Assign applications to specific workspaces
 assign [class="Chromium"] → $workspace2
@@ -194,9 +201,6 @@ assign [class="jetbrains-studio"] → $workspace3
 #for_window [class="Qtconfig-qt4"] floating enable
 #for_window [class="jetbrains-studio"] floating enable
 for_window [class="^.*"] floating enable
-
-# Configure all windows to focus when opened
-for_window [class="^.*"] focus
 
 # Add a gap between windows
 gaps inner 15
