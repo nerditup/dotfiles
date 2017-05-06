@@ -12,7 +12,7 @@ general {
 }
 
 #order += "ipv6"
-order += "disk /"
+#order += "disk /"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
 order += "wireless _first_"
@@ -22,7 +22,8 @@ order += "battery 0"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = " %quality at %essid"
+        #format_up = " %quality at %essid"
+        format_up = " %essid"
         format_down = "W: down"
 }
 
