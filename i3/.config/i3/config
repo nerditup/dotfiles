@@ -45,7 +45,7 @@ bindsym $mod+space exec rofi -modi run -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Update the desktop background (from unsplash)
-bindsym $mod+Shift+w exec ~/.fehbg
+bindsym $mod+Shift+w exec --no-startup-id ~/.fehbg
 
 # Switch Workspaces with the arrow keys
 bindsym $mod+Left workspace prev
@@ -201,3 +201,6 @@ for_window [class="^.*"] focus
 # Add a gap between windows
 gaps inner 15
 gaps outer 20 
+
+# Generate a background image for i3
+exec --no-startup-id ~/.fehbg

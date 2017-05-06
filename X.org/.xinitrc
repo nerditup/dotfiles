@@ -42,7 +42,7 @@ fi
 # Composite Manager
 compton -b --config ~/.compton.conf &
 # Wallpaper
-sh ~/.fehbg &
+#sh ~/.fehbg &
 # Terminal Emulator Daemon
 urxvtd -q -f &
 # VirtualBox Guest Additions
