@@ -193,8 +193,7 @@ for_window [class="Chromium"] border normal 1
 for_window [class="^.*"] focus
 
 # Assign applications to specific workspaces
-assign [class="Chromium"] → $workspace2
-assign [class="jetbrains-studio"] → $workspace3
+assign [class="Chromium"] → $workspace1
 
 # Configure floating mode for specific applications
 #for_window [class="Lxappearance"] floating enable
