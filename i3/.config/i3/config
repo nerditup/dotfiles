@@ -187,6 +187,7 @@ client.background       $bg
 
 # Configure all windows to have no border
 for_window [class="^.*"] border normal 0
+for_window [class="Chromium"] border normal 1
 
 # Configure all windows to focus when opened
 for_window [class="^.*"] focus
