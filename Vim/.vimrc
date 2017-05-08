@@ -18,3 +18,8 @@ set cursorline      " highlight current line
 " Tab Line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" Handle XML Files
+function PrettyXML()
+    %!xmllint --format %
+endfunction
