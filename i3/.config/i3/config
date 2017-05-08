@@ -99,7 +99,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # use variables to name the workspaces
-set $workspace1 "1"
+set $workspace1 ""
 set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
