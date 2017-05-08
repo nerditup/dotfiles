@@ -99,10 +99,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # use variables to name the workspaces
-set $workspace1 ""
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
+set $workspace1 ""
+set $workspace2 ""
+set $workspace3 ""
+set $workspace4 ""
 set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
@@ -193,7 +193,7 @@ for_window [class="Chromium"] border normal 1
 for_window [class="^.*"] focus
 
 # Assign applications to specific workspaces
-assign [class="Chromium"] → $workspace1
+assign [class="Chromium"] → $workspace2
 
 # Configure floating mode for specific applications
 #for_window [class="Lxappearance"] floating enable
