@@ -20,6 +20,9 @@ URxvt.scrollBar: false
 ! Set terminal padding
 URxvt.internalBorder: 15
 
+! Set terminal geometry
+URxvt.geometry: 85x24
+
 ! Enables copy/paste with Ctrl-Shift-C/V
 URxvt.iso14755: false
 URxvt.iso14755_52: false

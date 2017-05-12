@@ -10,9 +10,9 @@ set expandtab       " tabs are spaces
 " UI Config
 set number          " show line numbers
 set showcmd         " show command in bottom bar
-set cursorline      " highlight current line
+" set cursorline      " highlight current line
 
-" Handle XML Files
+" Pretty Print XML Syntax
 function PrettyXML()
     %!xmllint --format %
 endfunction
