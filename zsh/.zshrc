@@ -1,7 +1,7 @@
 # Handle the style control for the completion system
-zstyle :compinstall filename '/home/csloggett/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 # Handle git auto completion (requires the git-completion.zsh script from git source)
-zstyle ':completion:*:*:git:*' script '/home/csloggett/.git-completion.zsh'
+zstyle ':completion:*:*:git:*' script '~/.config/zsh/git-completion.zsh'
 
 # Enable autocompletion
 autoload -Uz compinit 
@@ -24,7 +24,7 @@ PROMPT=' %(!.%F{red}%B.%F{green}%B)→%b%f %~ %(!.#.$) '
 
 # Load the git prompt script to show on the right prompt
 setopt prompt_subst
-. /home/csloggett/.git-prompt.sh
+. ~/.config/zsh/git-prompt.sh
 
 # Configure the Right Prompt
 export RPROMPT=$'$(__git_ps1 "%s")'
