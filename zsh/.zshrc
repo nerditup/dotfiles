@@ -27,9 +27,11 @@ setopt prompt_subst
 . ~/.config/zsh/git-prompt.sh
 
 # Configure the git details to display
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
 
 # Configure the Right Prompt
 export RPROMPT=$'$(__git_ps1 "%s")'
