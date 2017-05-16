@@ -219,16 +219,16 @@ ramp-headphones-0 = 
 type = custom/menu
 
 label-open =   
-label-close = Cancel
+label-close = 
 label-open-padding = 4 
 label-close-padding = 3 
 
-menu-0-0 = 
-menu-0-0-exec = reboot
-menu-0-1 = 
-menu-0-1-exec = poweroff
-menu-0-2 = 
-menu-0-2-exec = ~/.config/polybar/logout.sh
+menu-0-0 = 
+menu-0-0-exec = i3-msg exit
+menu-0-1 = 
+menu-0-1-exec = reboot
+menu-0-2 = 
+menu-0-2-exec = poweroff
 menu-0-0-padding = 3
 menu-0-1-padding = 3
 menu-0-2-padding = 3
