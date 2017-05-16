@@ -219,25 +219,13 @@ ramp-headphones-0 = 
 type = custom/menu
 
 label-open =   
-;label-open-background = #dd0000
-;label-open-foreground = #fff
 label-close = Cancel
-;label-close-background = #dd0000
-;label-close-foreground = #fff
 label-open-padding = 4 
 label-close-padding = 3 
 
 menu-0-0 = Reboot
-menu-0-0-exec = menu-open-1
+menu-0-0-exec = reboot
 menu-0-1 = Power Off
-menu-0-1-exec = menu-open-2
+menu-0-1-exec = poweroff
 menu-0-0-padding = 3
 menu-0-1-padding = 3
-
-menu-1-0 = Reboot?  
-menu-1-0-exec = reboot
-menu-1-0-padding = 3
-
-menu-2-0 = Power Off?  
-menu-2-0-exec = poweroff
-menu-2-0-padding = 3
