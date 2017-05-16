@@ -223,9 +223,12 @@ label-close = Cancel
 label-open-padding = 4 
 label-close-padding = 3 
 
-menu-0-0 = Reboot
+menu-0-0 = 
 menu-0-0-exec = reboot
-menu-0-1 = Power Off
+menu-0-1 = 
 menu-0-1-exec = poweroff
+menu-0-2 = 
+menu-0-2-exec = exit
 menu-0-0-padding = 3
 menu-0-1-padding = 3
+menu-0-2-padding = 3
