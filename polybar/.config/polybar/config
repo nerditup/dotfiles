@@ -221,8 +221,8 @@ type = custom/menu
 label-open =   
 label-close = 
 label-open-padding = 4 
-label-open-underline = ${module/bspwm.label-focused-underline}
 label-close-padding = 4 
+label-close-underline = ${colors.secondary}
 
 menu-0-0 = 
 menu-0-0-exec = i3-msg exit
