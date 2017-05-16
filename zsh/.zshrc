@@ -29,6 +29,7 @@ setopt prompt_subst
 # Configure the git details to display
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWDIRTYSTATE=1
 
 # Configure the Right Prompt
 export RPROMPT=$'$(__git_ps1 "%s")'
