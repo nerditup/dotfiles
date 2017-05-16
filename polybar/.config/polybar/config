@@ -222,7 +222,7 @@ label-open = 
 label-close = 
 label-open-padding = 4 
 label-close-padding = 4 
-label-close-underline = ${colors.secondary}
+label-close-underline = ${colors.foreground}
 
 menu-0-0 = 
 menu-0-0-exec = i3-msg exit
