@@ -26,6 +26,10 @@ PROMPT=' %(!.%F{red}%B.%F{green}%B)→%b%f %~ %(!.#.$) '
 setopt prompt_subst
 . ~/.config/zsh/git-prompt.sh
 
+# Configure the git details to display
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWUNTRACKEDFILES=1
+
 # Configure the Right Prompt
 export RPROMPT=$'$(__git_ps1 "%s")'
 
@@ -35,4 +39,3 @@ alias ls='ls -h --color=auto'
 alias la='ls -la'
 alias df='df -h'
 alias du='du -h'
-alias tmux='tmux -2'

@@ -1,6 +1,6 @@
 " VIM Configuration
 
-colors ron          " choose a color scheme
+colors slate        " choose a color scheme
 
 syntax enable       " enable syntax processing
 
