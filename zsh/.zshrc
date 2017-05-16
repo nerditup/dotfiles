@@ -36,7 +36,6 @@ GIT_PS1_SHOWCOLORHINTS=1
 # Configure the Right Prompt
 export RPROMPT=$'$(__git_ps1 "%s")'
 
-
 # Aliases
 alias ls='ls -h --color=auto'
 alias la='ls -la'
