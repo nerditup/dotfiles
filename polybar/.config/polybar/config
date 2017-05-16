@@ -221,7 +221,7 @@ type = custom/menu
 label-open =   
 label-close = 
 label-open-padding = 4 
-label-close-padding = 4 
+label-close-padding = 3 
 label-close-underline = ${colors.foreground}
 
 menu-0-0 = 
