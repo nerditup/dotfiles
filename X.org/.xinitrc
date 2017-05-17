@@ -43,6 +43,8 @@ fi
 compton -b --config ~/.compton.conf &
 # Wallpaper
 #sh ~/.fehbg &
+# Keyboard Function Keys
+xbindkeys &
 # Terminal Emulator Daemon
 urxvtd -q -f &
 # VirtualBox Guest Additions
