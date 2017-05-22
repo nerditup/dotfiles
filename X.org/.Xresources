@@ -10,7 +10,7 @@ Xft.lcdfilter: lcddefault
 
 ! URxvt !
 ! Set the font
-URxvt.font: xft:DejavuSansMono:size=10
+URxvt.font: xft:DejavuSansMono:size=10,xft:Deja Vu Sans Mono for Powerline
 URxvt.letterSpace: -1
 URxvt.lineSpace: -1
 
