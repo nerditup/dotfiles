@@ -52,7 +52,7 @@ bindsym $mod+Tab focus right
 bindsym $mod+Shift+Tab focus mode_toggle
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 
 # alternatively, you can use the cursor keys:
 #bindsym $mod+Left focus left
@@ -166,6 +166,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Lock Screen
+bindsym $mod+l exec --no-startup-id i3lock-fancy 
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
