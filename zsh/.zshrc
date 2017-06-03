@@ -37,7 +37,4 @@ GIT_PS1_SHOWCOLORHINTS=1
 export RPROMPT=$'$(__git_ps1 "%s")'
 
 # Aliases
-alias ls='ls -h --color=auto'
-alias la='ls -la'
-alias df='df -h'
-alias du='du -h'
+. ~/.zsh_aliases
