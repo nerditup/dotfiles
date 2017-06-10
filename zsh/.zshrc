@@ -13,7 +13,7 @@ HISTSIZE=5000
 SAVEHIST=5000
 
 # Set the Zsh Line Editor mode to vi
-bindkey -v
+#bindkey -v
 
 # Load the prompt theme system
 autoload -Uz promptinit
