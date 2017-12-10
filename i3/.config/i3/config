@@ -54,6 +54,9 @@ bindsym $mod+j focus left
 bindsym $mod+k focus down
 #bindsym $mod+l focus up
 
+# Don't make a window under the cursor focused
+focus_follows_mouse no
+
 # alternatively, you can use the cursor keys:
 #bindsym $mod+Left focus left
 bindsym $mod+Down focus down
