@@ -8,15 +8,19 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #263238
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #c5c8c6
-foreground-alt = #555
-primary = #ffb52a
-secondary = #2ac9ff
-alert = #bd2c40
+foreground = ${xrdb:color7}
+foreground-alt = ${xrdb:color7}
+background = ${xrdb:color2}
+background-alt = ${xrdb:color2}
+primary = ${xrdb:color7}
+secondary = ${xrdb:color2}
+alert = ${xrdb:color5}
+
+;foreground = #c5c8c6
+;foreground-alt = #555
+;background = #263238
+;background-alt = #444
+;alert = #bd2c40
 
 [bar/top]
 width = 100%
@@ -25,11 +29,8 @@ offset-x = 0
 offset-y = -1 
 ;bottom = true
 
-background = #5a000000
-foreground = #eee
-
 underline-size = 2
-underline-color = #eee
+underline-color = ${colors.secondary}
 
 spacing = 1
 padding-left = 0
@@ -58,7 +59,7 @@ mount-0 = /
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.foreground}
 
 [module/i3]
 type = internal/i3
@@ -70,12 +71,12 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 4
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline = ${colors.primary}
 label-focused-padding = 4
 
@@ -112,6 +113,7 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 
+
 [module/date]
 type = internal/date
 
@@ -132,9 +134,10 @@ time-alt = %H:%M:%S
 
 label = %date% %time%
 format =    <label>
-;format-background = #ddffffff
-format-background = #88000000
-;format-foreground = #333
+format-background = ${colors.background}
+format-foreground = #fff
+format-underline = ${colors.foreground}
+;format-foreground = ${colors.foreground}
 format-padding = 3
 
 
@@ -209,12 +212,12 @@ label-close-padding = 4
 menu-0-0 = 
 menu-0-0-exec = i3-msg exit
 menu-0-0-padding = 4
-menu-0-0-underline = ${colors.secondary}
+menu-0-0-underline = ${colors.primary}
 menu-0-1 = 
 menu-0-1-exec = reboot
 menu-0-1-padding = 4
-menu-0-1-underline = ${colors.secondary}
+menu-0-1-underline = ${colors.primary}
 menu-0-2 = 
 menu-0-2-exec = poweroff
 menu-0-2-padding = 4
-menu-0-2-underline = ${colors.secondary}
+menu-0-2-underline = ${colors.primary}
