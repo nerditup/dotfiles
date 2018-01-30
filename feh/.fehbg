@@ -1,2 +1,2 @@
 #!/bin/sh
-'feh' '--bg-scale' 'https://source.unsplash.com/collection/935527/1920x1080' 
+'feh' '--bg-fill' '/home/nerditup/Downloads/Wallpaper/ilya-pavlov-87438.jpg' 

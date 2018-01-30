@@ -41,8 +41,6 @@ fi
 
 # Composite Manager
 compton -b --config ~/.compton.conf &
-# Wallpaper
-#sh ~/.fehbg &
 # Keyboard Function Keys
 xbindkeys &
 # Terminal Emulator Daemon

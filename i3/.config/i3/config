@@ -214,8 +214,8 @@ for_window [class="^.*"] floating enable
 gaps inner 15
 gaps outer 20 
 
-# Generate a background image for i3
-exec --no-startup-id ~/.fehbg
+# Wallpaer and Colour Theme
+exec --no-startup-id wal -R
 
 # Start Polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
