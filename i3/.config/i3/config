@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec rofi -modi run -show run
 
 # Update the desktop background (from unsplash)
-bindsym $mod+Shift+w exec --no-startup-id ~/.fehbg
+bindsym $mod+Shift+w exec --no-startup-id wal -R
 
 # Switch Workspaces with the arrow keys
 bindsym $mod+Left workspace prev
