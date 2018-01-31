@@ -179,17 +179,24 @@ type = internal/backlight
 card = intel_backlight
 enable-scroll = true
 
-format = <ramp>
+format = <bar>
 format-padding = 3
 
+; Only applies if <ramp> is used
 ramp-0 = 🌕
 ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
 
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <ramp-volume>
 format-muted = <label-muted>
