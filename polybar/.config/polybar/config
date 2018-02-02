@@ -136,10 +136,9 @@ time-alt = %H:%M:%S
 
 label = %date% %time%
 format =    <label>
-format-background = ${colors.background}
+;format-background = ${colors.background}
 format-foreground = ${colors.foreground}
-format-underline = ${colors.foreground}
-;format-foreground = ${colors.foreground}
+;format-underline = ${colors.foreground}
 format-padding = 3
 
 
