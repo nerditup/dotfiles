@@ -215,7 +215,7 @@ gaps inner 15
 gaps outer 20 
 
 # Wallpaer and Colour Theme
-exec --no-startup-id wal -R
+exec --no-startup-id wal -R -a 90
 
 # Start Polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
