@@ -195,27 +195,26 @@ client.background       $bg
 
 # Configure all windows to have no border
 for_window [class="^.*"] border normal 0
-for_window [class="Chromium"] border normal 1
+for_window [class="Firefox"] border normal 1
 
 # Configure all windows to focus when opened
 for_window [class="^.*"] focus
 
 # Assign applications to specific workspaces
-assign [class="Chromium"] → $workspace2
+assign [class="Firefox"] → $workspace2
 
 # Configure floating mode for specific applications
 #for_window [class="Lxappearance"] floating enable
-#for_window [class="Keepassx2"] floating enable
 #for_window [class="Qtconfig-qt4"] floating enable
-#for_window [class="jetbrains-studio"] floating enable
 for_window [class="^.*"] floating enable
+for_window [class="Firefox"] floating disable
 
 # Add a gap between windows
 gaps inner 15
 gaps outer 20 
 
 # Wallpaer and Colour Theme
-exec --no-startup-id wal -R
+exec --no-startup-id wal -R -a 90
 
 # Start Polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
