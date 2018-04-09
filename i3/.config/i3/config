@@ -204,11 +204,9 @@ for_window [class="^.*"] focus
 assign [class="Firefox"] → $workspace2
 
 # Configure floating mode for specific applications
-#for_window [class="Lxappearance"] floating enable
-#for_window [class="Qtconfig-qt4"] floating enable
 for_window [class="^.*"] floating enable
 for_window [class="Firefox"] floating disable
-
+for_window [class="Dialog"] floating enable
 # Add a gap between windows
 gaps inner 15
 gaps outer 20 
