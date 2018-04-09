@@ -46,7 +46,7 @@ font-2 = siji:pixelsize=10;0
 
 modules-left = i3 xwindow
 modules-center = 
-modules-right = wlan volume backlight battery date powermenu
+modules-right = wlan volume battery date powermenu
 
 [module/xwindow]
 type = internal/xwindow
