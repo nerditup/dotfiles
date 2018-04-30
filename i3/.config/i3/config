@@ -25,8 +25,16 @@ font pango:DejaVu Sans Mono 18
 for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'> > %title</span>"
 
 # Set global foreground and background colors
-set_from_resource $fg foreground #f0f0f0
-set_from_resource $bg background #f0f0f0
+set_from_resource $fg      foreground #f0f0f0
+set_from_resource $bg      background #f0f0f0
+set_from_resource $black   color0     #282a2e
+set_from_resource $red     color1     #a54242
+set_from_resource $green   color2     #8c9440
+set_from_resource $yellow  color3     #de935f
+set_from_resource $blue    color4     #5f819d
+set_from_resource $magenta color5     #85678f
+set_from_resource $cyan    color6     #5e8d87
+set_from_resource $white   color7     #707880
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -173,14 +181,14 @@ bindsym $mod+r mode "resize"
 # Lock Screen
 bindsym $mod+l exec --no-startup-id i3lock-fancy 
 
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# class                 border  background text indicator child_border
+client.focused          $bg     $blue      $fg  $bg       $bg
+client.focused_inactive $bg     $blue      $fg  $bg       $bg
+client.unfocused        $bg     $blue      $fg  $bg       $bg
+client.urgent           $bg     $red       $fg  $bg       $bg
+client.placeholder      $bg     $blue      $fg  $bg       $bg
 
-client.background       $bg
+client.background       $blue
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -193,25 +201,17 @@ client.background       $bg
 
 # Configure all windows to have no border
 for_window [class="^.*"] border normal 0
-for_window [class="Firefox"] border normal 1
 
 # Configure all windows to focus when opened
 for_window [class="^.*"] focus
 
-# Assign applications to specific workspaces
-assign [class="Firefox"] → $workspace2
-
 # Configure floating mode for specific applications
 for_window [class="^.*"] floating enable
-for_window [class="Firefox"] floating disable
-for_window [window_type="dialog"] floating enable
 
 # Add a gap between windows
 gaps inner 15
 gaps outer 20 
 
-# Wallpaer and Colour Theme
-exec --no-startup-id wal -R -a 90
-
 # Start Polybar
+exec --no-startup-id ~/.fehbg
 exec --no-startup-id ~/.config/polybar/launch.sh
