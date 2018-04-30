@@ -38,6 +38,3 @@ export RPROMPT=$'$(__git_ps1 "%s")'
 
 # Aliases
 . ~/.zsh_aliases
-
-# Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh
