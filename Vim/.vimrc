@@ -1,11 +1,6 @@
 " VIM Configuration
 "
-" Plug-in Management
-call plug#begin()
-
-Plug 'dylanaraps/wal'
-
-colorscheme wal
+colorscheme morning
 
 syntax enable           " enable syntax processing
 
@@ -24,6 +19,3 @@ set foldlevel=20        " Open all of the folds on load
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 " set cursorline          " highlight current line
-
-" Initialize plugin system
-call plug#end()

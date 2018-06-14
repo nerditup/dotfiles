@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/nerditup/Source/GitHub/nerditup/dotfiles'
-let g:netrw_dirhist_2='/home/nerditup/.config/polybar'
-let g:netrw_dirhist_3='/home/nerditup/Source/GitHub/nerditup/scripts/personal-cloud/compute'
-let g:netrw_dirhist_4='/home/nerditup/Source/Django/nerditup_cloud/nerditup_cloud'
-let g:netrw_dirhist_5='/home/nerditup/Source/GitHub/nerditup/dotfiles/i3/.config'
-let g:netrw_dirhist_6='/home/nerditup/Source/GitHub/nerditup/dotfiles/polybar/.config'
-let g:netrw_dirhist_7='/home/nerditup/Source/GitHub/nerditup/dotfiles/i3/.config/i3'
