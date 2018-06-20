@@ -182,22 +182,13 @@ bindsym $mod+r mode "resize"
 bindsym $mod+l exec --no-startup-id i3lock-fancy 
 
 # class                 border  background text indicator child_border
-client.focused          $bg     $blue      $fg  $bg       $bg
-client.focused_inactive $bg     $blue      $fg  $bg       $bg
-client.unfocused        $bg     $blue      $fg  $bg       $bg
-client.urgent           $bg     $red       $fg  $bg       $bg
-client.placeholder      $bg     $blue      $fg  $bg       $bg
-
+client.focused          $blue   $blue      $fg  $bg       $bg
+client.focused_inactive $blue   $blue      $fg  $bg       $bg
+client.unfocused        $blue   $blue      $fg  $bg       $bg
+client.urgent           $red    $red       $fg  $bg       $bg
+client.placeholder      $blue   $blue      $fg  $bg       $bg
+# title bar background
 client.background       $blue
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#    font pango:DejaVu Sans Mono 10
-#	position top
-#	colors { background #263238 }
-#        status_command i3status
-#}
 
 # Configure all windows to have no border
 for_window [class="^.*"] border normal 0
