@@ -1,6 +1,6 @@
 " VIM Configuration
 "
-colorscheme morning
+colorscheme desert 
 
 syntax enable           " enable syntax processing
 
