@@ -1,4 +1,4 @@
-#include "~/.xres/urxvt"
-#include "~/.xres/rofi"
-#include "~/.xres/colors"
-#include "~/.xres/fonts"
+#include ".xres/urxvt"
+#include ".xres/rofi"
+#include ".xres/colors"
+#include ".xres/fonts"
