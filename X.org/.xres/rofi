@@ -13,7 +13,7 @@ rofi.fullscreen:        true
 rofi.padding:           250
 rofi.hide-scrollbar:    true
 rofi.line-margin:       5
-rofi.fake-transparency: false
+rofi.fake-transparency: true
 rofi.yoffset:           0
 rofi.xoffset:           0
 rofi.width:             100
