@@ -12,6 +12,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $mod1 Mod1
 
 # Font for window titles. Will also be used by the bar 
 # unless a different font is used in the bar {} block below.
@@ -45,8 +46,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi (a program launcher)
+# start rofi in run mode
 bindsym $mod+space exec rofi -modi run -show run
+# start rofi in window mode
+bindsym $mod1+Tab exec rofi -modi window -show window
 
 # Update the desktop background (from unsplash)
 bindsym $mod+Shift+w exec --no-startup-id wal -R
@@ -223,5 +226,4 @@ bar {
     }
 }
 
-#exec --no-startup-id ~/.fehbg
-#exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.fehbg
