@@ -199,8 +199,17 @@ for_window [class="^.*"] border normal 0
 # Configure all windows to focus when opened
 for_window [class="^.*"] focus
 
-# Configure floating mode for specific applications
+# Configure floating mode application pop-ups, etc.
 for_window [class="^.*"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# Configure floating mode for specific applications
+for_window [class="keepassxc"] floating enable
 
 # Add a gap between windows
 gaps inner 15
