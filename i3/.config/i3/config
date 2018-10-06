@@ -209,7 +209,7 @@ gaps outer 20
 # Add a Status Bar
 bar {
     status_command      i3status
-    position            bottom
+    position            top
     workspace_buttons   yes
     tray_output         none
 
