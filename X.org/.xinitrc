@@ -39,13 +39,18 @@ fi
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
 
+# VirtualBox Guest Additions
+#VBoxClient-all
+
 # Composite Manager
 compton -b --config ~/.compton.conf &
 # Keyboard Function Keys
 xbindkeys &
 # Terminal Emulator Daemon
 urxvtd -q -f &
-# VirtualBox Guest Additions
-VBoxClient-all
+# Automounter
+udiskie &
+# Wallpaper
+$HOME/.fehbg &
 # Window Manager
 exec i3
