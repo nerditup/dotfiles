@@ -182,7 +182,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock Screen
-bindsym $mod+l exec --no-startup-id i3lock
+bindsym $mod+l exec --no-startup-id i3lock -c 000000
 
 # class                 border  background text indicator child_border
 client.focused          $blue   $blue      $fg  $bg       $bg
