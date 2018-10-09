@@ -27,31 +27,28 @@ mkfifo "$PANEL_FIFO"
 
 # Clock
 clock() {
-    echo "Clock 1234"
+    echo "Clock "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/time)
 }
 
-# WiFi
-wifi() {
-    signal_strength=$(iw wlp58s0 link | grep 'signal' | awk '{printf "%s", $2}')
-    essid=$(iw wlp58s0 link | grep 'SSID' | awk '{printf "%s", $2}')
-    if [[ "$signal_strength" -le -100 ]]; then
-        percentage=0
-    elif [[ "$signal_stength" -ge -50 ]]; then
-        percentage=100
-    else
-        percentage=$(( 2 * ("$signal_strength" + 100) ))
-    fi
-    if [[ "$essid" != "" ]]; then
-        echo "Network $percentage% $essid"
-    fi
+# Network
+network() {
+    echo "Network "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/network)
 }
 
 # Volume
+volume() {
+    echo "Volume "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/volume)
+}
 
 # Battery
+battery() {
+    echo "Battery "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery)
+}
 
 while :; do clock; sleep 60s; done > "$PANEL_FIFO" &
-while :; do wifi; sleep 10s; done > "$PANEL_FIFO" &
+while :; do network; sleep 10s; done > "$PANEL_FIFO" &
+while :; do battery; sleep 60s; done > "$PANEL_FIFO" &
+while :; do volume; sleep 0.05s; done > "$PANEL_FIFO" &
 
 while read -r line ; do
     case $line in
@@ -61,6 +58,12 @@ while read -r line ; do
         Network*)
             wl="${line:8}"
             ;;
+        Battery*)
+            bt="${line:8}"
+            ;;
+        Volume*)
+            vm="${line:7}"
+            ;;
     esac
-    echo "%{l}test%{c+u}test1%{r+u}$wl $cl"
-done < "$PANEL_FIFO" | lemonbar -f "$PANEL_FONT" -U "$BLUE" -B "$BACKGROUND" -F "$FOREGROUND" -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" -n "$PANEL_WM_NAME"
+    echo "%{l}test%{c+u}test1%{r+u} $vm $bt $wl $cl "
+done < "$PANEL_FIFO" | lemonbar -f "$PANEL_FONT" -U "$RED" -B "$BACKGROUND" -F "$FOREGROUND" -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" -n "$PANEL_WM_NAME"
