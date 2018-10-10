@@ -39,7 +39,7 @@ fi
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 # Composite Manager
-compton -b --config ~/.compton.conf &
+compton -b --config $HOME/.config/compton/compton.conf &
 # Keyboard Function Keys
 xbindkeys &
 # Terminal Emulator Daemon
@@ -47,8 +47,8 @@ urxvtd -q -f &
 # Automounter
 udiskie &
 # Wallpaper
-$HOME/.config/feh/.fehbg &
+$HOME/.config/feh/fehbg.sh &
 # Bar
-$HOME/.config/lemonbar/.lemonbar &
+$HOME/.config/lemonbar/lemonbar.sh &
 # Window Manager
 exec bspwm
