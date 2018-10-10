@@ -35,8 +35,9 @@ fi
 # VirtualBox Guest Additions
 #VBoxClient-all
 
-# Default X11 Cursor
-xsetroot -cursor_name left_ptr  # Required for BSPWM
+# Synchronize PRIMARY and CLIPBOARD
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
 # Composite Manager
 compton -b --config ~/.compton.conf &
 # Keyboard Function Keys
@@ -50,4 +51,4 @@ $HOME/.config/feh/.fehbg &
 # Bar
 $HOME/.config/lemonbar/.lemonbar &
 # Window Manager
-exec i3
+exec bspwm
