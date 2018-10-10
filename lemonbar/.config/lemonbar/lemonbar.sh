@@ -66,5 +66,5 @@ while read -r line ; do
             vm="${line:7}"
             ;;
     esac
-    echo "%{l}test%{c+u}test1%{r+u} $vm $bt $wl $cl "
+    echo "%{l}test%{c+u}test1%{r+u} [$vm] [$bt] [$wl] [$cl] "
 done < "$PANEL_FIFO" | lemonbar -o 0 -f "$PANEL_FONT" -o -1 -f "$GLYPH_FONT" -U "$RED" -B "$BACKGROUND" -F "$FOREGROUND" -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" -n "$PANEL_WM_NAME" | sh &
