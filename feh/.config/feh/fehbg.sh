@@ -1,2 +1,2 @@
 #!/bin/sh
-'feh' '--bg-fill' '/home/nerditup/Wallpaper/aniket-deole-84275-unsplash.jpg' 
+'feh' '--bg-fill' 'https://source.unsplash.com/1920x1080/?mountains'
