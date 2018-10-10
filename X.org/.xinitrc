@@ -46,6 +46,8 @@ urxvtd -q -f &
 # Automounter
 udiskie &
 # Wallpaper
-$HOME/.fehbg &
+$HOME/.config/feh/.fehbg &
+# Bar
+$HOME/.config/lemonbar/.lemonbar &
 # Window Manager
 exec i3
