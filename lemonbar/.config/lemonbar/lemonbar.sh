@@ -15,10 +15,10 @@ MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
 CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
 WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
 # Panel Geometry
-PANEL_HEIGHT=30
-PANEL_WIDTH=1900
-PANEL_HORIZONTAL_OFFSET=10
-PANEL_VERTICAL_OFFSET=8
+PANEL_HEIGHT=32
+PANEL_WIDTH=1888
+PANEL_HORIZONTAL_OFFSET=16
+PANEL_VERTICAL_OFFSET=16
 PANEL_FONT="DejavuSansMono:size=10"
 GLYPH_FONT="DejavuSansMono:size=10"
 

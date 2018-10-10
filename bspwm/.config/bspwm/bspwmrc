@@ -20,14 +20,13 @@
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 ## common bspwm configuration
-bspc config border_width        2
-bspc config window_gap         	16
-bspc config split_ratio          0.5
-bspc config borderless_monocle   true
-bspc config gapless_monocle      false
+bspc config border_width 2
+bspc config window_gap 16
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle false
 bspc config focus_follows_pointer true
-bspc config top_padding 32
-
+bspc config top_padding 48
 
 ## color settings
 bspc config focused_border_color "#d8dee8" 
