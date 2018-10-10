@@ -20,6 +20,7 @@ PANEL_WIDTH=1900
 PANEL_HORIZONTAL_OFFSET=10
 PANEL_VERTICAL_OFFSET=8
 PANEL_FONT="DejavuSansMono:size=10"
+GLYPH_FONT="DejavuSansMono:size=10"
 
 # Setup a FIFO such that the info is updating at different intervals, ie. when they change.
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
