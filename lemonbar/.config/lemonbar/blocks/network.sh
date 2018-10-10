@@ -1,33 +1,15 @@
 #!/bin/sh
 
-text=''
+signal_strength=$(iw wlp58s0 link | grep 'signal' | awk '{printf "%s", $2}')
+essid=$(iw wlp58s0 link | grep 'SSID' | awk '{printf "%s", $2}')
 
-for INTERFACE in $(ls /sys/class/net/); do
-    state="$(cat /sys/class/net/$INTERFACE/operstate)"
-    if [ "$state" = "up" ]; then
-        ipaddr="$(ip addr show $INTERFACE | perl -n -e'/inet (.+)\// && print $1')"
-        ipaddr="${ipaddr:- -}"
-		iwid="$(iwgetid -r)"
-
-		if [ "$INTERFACE" = "wlp58s0" ]; then
-			text=" $text |  $iwid"
-			#text=" $text |  $iwid $ipaddr"
-		else
-			text=" $text |   wired $ipaddr"
-			#text=" $text |   wired"
-		fi
-    fi
-	if [ "$INTERFACE" = "bnep0" ]; then
-		if [ "$(ls -A /sys/class/net/$INTERFACE)" ]; then
-			text=" Bluetooth network"
-		fi
-	fi
-done
-
-if [ -n "$text" ]; then
-    text=$(echo $text | sed "s/^| //")
-    echo "%{+o}%{B-}%{U#FFFFFF}$text %{B-}%{U-}%{-o}"
+if [[ "$signal_strength" -le -100 ]]; then
+    percentage=0
+elif [[ "$signal_stength" -ge -50 ]]; then
+    percentage=100
 else
-    #echo ' '"-/->"' '
-    echo " No connection"
+    percentage=$(( 2 * ("$signal_strength" + 100) ))
+fi
+if [[ "$essid" != "" ]]; then
+    echo "$percentage% $essid"
 fi
