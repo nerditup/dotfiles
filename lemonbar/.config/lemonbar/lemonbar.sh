@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script Configuration
 PANEL_FIFO=/tmp/panel_fifo
@@ -27,22 +27,22 @@ mkfifo "$PANEL_FIFO"
 
 # Clock
 clock() {
-    echo "Clock "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/time)
+    echo "Clock "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/time.sh)
 }
 
 # Network
 network() {
-    echo "Network "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/network)
+    echo "Network "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/network.sh)
 }
 
 # Volume
 volume() {
-    echo "Volume "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/volume)
+    echo "Volume "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/volume.sh)
 }
 
 # Battery
 battery() {
-    echo "Battery "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery)
+    echo "Battery "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery.sh)
 }
 
 while :; do clock; sleep 60s; done > "$PANEL_FIFO" &
