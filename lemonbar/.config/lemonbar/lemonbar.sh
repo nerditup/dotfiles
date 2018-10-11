@@ -71,7 +71,6 @@ while read -r line ; do
             set -- ${line:1}    # Strip the leading W
             while [ $# -gt 0 ] ; do  # While the number of command-line arguments is not 0
                 item=$1
-                name=${item:1}
                 case $item in
                     [mM]*)
                         case $item in
@@ -96,6 +95,7 @@ while read -r line ; do
                                 FG=$foreground
                                 BG=$background
                                 UL=$red
+                                name="□"
                                 ;;
                             F*)
                                 if [ "$on_focused_monitor" ] ; then
@@ -103,11 +103,13 @@ while read -r line ; do
                                     FG=$red
                                     BG=$background
                                     UL=$red
+                                    name="■"
                                 else
                                     # active free desktop
                                     FG=$foreground
                                     BG=$background
                                     UL=$red
+                                    name="□"
                                 fi
                                 ;;
                             o*)
@@ -115,6 +117,7 @@ while read -r line ; do
                                 FG=$foreground
                                 BG=$background
                                 UL=$red
+                                name="□"
                                 ;;
                             O*)
                                 if [ "$on_focused_monitor" ] ; then
@@ -122,11 +125,13 @@ while read -r line ; do
                                     FG=$red
                                     BG=$background
                                     UL=$red
+                                    name="■"
                                 else
                                     # active occupied desktop
                                     FG=$foreground
                                     BG=$background
                                     UL=$red
+                                    name="□"
                                 fi
                                 ;;
                             u*)
@@ -134,6 +139,7 @@ while read -r line ; do
                                 FG=$foreground
                                 BG=$background
                                 UL=$red
+                                name="□"
                                 ;;
                             U*)
                                 if [ "$on_focused_monitor" ] ; then
@@ -141,11 +147,13 @@ while read -r line ; do
                                     FG=$foreground
                                     BG=$background
                                     UL=$red
+                                    name="■"
                                 else
                                     # active urgent desktop
                                     FG=$foreground
                                     BG=$background
                                     UL=$red
+                                    name="□"
                                 fi
                                 ;;
                         esac
