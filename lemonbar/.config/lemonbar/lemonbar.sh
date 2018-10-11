@@ -100,9 +100,9 @@ while read -r line ; do
                             F*)
                                 if [ "$on_focused_monitor" ] ; then
                                     # focused free desktop
-                                    FG=$cyan
+                                    FG=$red
                                     BG=$background
-                                    UL=$green
+                                    UL=$red
                                 else
                                     # active free desktop
                                     FG=$foreground
@@ -114,19 +114,19 @@ while read -r line ; do
                                 # occupied desktop
                                 FG=$foreground
                                 BG=$background
-                                UL=$blue
+                                UL=$red
                                 ;;
                             O*)
                                 if [ "$on_focused_monitor" ] ; then
                                     # focused occupied desktop
-                                    FG=$cyan
+                                    FG=$red
                                     BG=$background
-                                    UL=$green
+                                    UL=$red
                                 else
                                     # active occupied desktop
                                     FG=$foreground
                                     BG=$background
-                                    UL=$green
+                                    UL=$red
                                 fi
                                 ;;
                             u*)
