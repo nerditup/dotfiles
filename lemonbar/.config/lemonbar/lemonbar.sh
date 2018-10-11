@@ -1,60 +1,51 @@
 #!/bin/sh
 
 # Script Configuration
-PANEL_FIFO=/tmp/panel_fifo
-PANEL_WM_NAME=bspwm_panel
+panel_fifo=/tmp/panel_fifo
+panel_wm_name=bspwm_panel
 # Colours
-FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
-BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
-BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
-RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
-GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
-YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
-BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
-MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
-CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
-WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+source ./colors.sh
 # Panel Geometry
-PANEL_HEIGHT=28
-PANEL_WIDTH=1920
-PANEL_HORIZONTAL_OFFSET=0
-PANEL_VERTICAL_OFFSET=0
-PANEL_FONT="-misc-dejavu sans mono-medium-r-normal--0-80-0-0-m-0-iso10646-1"
+panel_height=28
+panel_width=1920
+panel_horizontal_offset=0
+panel_vertical_offset=0
+panel_font="-misc-dejavu sans mono-medium-r-normal--0-80-0-0-m-0-iso10646-1"
 
 # Setup a FIFO such that the info is updating at different intervals, ie. when they change.
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
+[ -e "$panel_fifo" ] && rm "$panel_fifo"
+mkfifo "$panel_fifo"
 
 # Clock
 clock() {
-    echo "Clock "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/time.sh)
+    echo "Clock "$(blocks/time.sh)
 }
 
 # Network
 network() {
-    echo "Network "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/network.sh)
+    echo "Network "$(blocks/network.sh)
 }
 
 # Volume
 volume() {
-    echo "Volume V:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/volume.sh)
+    echo "Volume V:"$(blocks/volume.sh)
 }
 
 # Battery
 battery() {
-    echo "Battery B:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery.sh)
+    echo "Battery B:"$(blocks/battery.sh)
 }
 
 # Brightness
 brightness() {
-    echo "Brightness BL:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/brightness.sh)
+    echo "Brightness BL:"$(blocks/brightness.sh)
 }
 
-while :; do clock; sleep 60s; done > "$PANEL_FIFO" &
-while :; do network; sleep 10s; done > "$PANEL_FIFO" &
-while :; do battery; sleep 10s; done > "$PANEL_FIFO" &
-while :; do volume; sleep 0.05s; done > "$PANEL_FIFO" &
-while :; do brightness; sleep 1s; done > "$PANEL_FIFO" &
+while :; do clock; sleep 60s; done > "$panel_fifo" &
+while :; do network; sleep 10s; done > "$panel_fifo" &
+while :; do battery; sleep 10s; done > "$panel_fifo" &
+while :; do volume; sleep 0.05s; done > "$panel_fifo" &
+while :; do brightness; sleep 1s; done > "$panel_fifo" &
 
 while read -r line ; do
     case $line in
@@ -75,4 +66,4 @@ while read -r line ; do
             ;;
     esac
     echo "%{l}test%{c+u}test1%{r+u} [$br] [$vm] [$bt] [$wl] [$cl] "
-done < "$PANEL_FIFO" | lemonbar -f "$PANEL_FONT" -U "$RED" -B "$BACKGROUND" -F "$FOREGROUND" -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" -n "$PANEL_WM_NAME" | sh &
+done < "$panel_fifo" | lemonbar -f "$panel_font" -U "$red" -B "$background" -F "$foreground" -g "$panel_width"x"$panel_height"+"$panel_horizontal_offset"+"$panel_vertical_offset" -n "$panel_wm_name" | sh &
