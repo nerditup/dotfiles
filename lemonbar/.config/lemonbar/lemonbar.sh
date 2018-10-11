@@ -46,6 +46,7 @@ while :; do network; sleep 10s; done > "$panel_fifo" &
 while :; do battery; sleep 10s; done > "$panel_fifo" &
 while :; do volume; sleep 0.05s; done > "$panel_fifo" &
 while :; do brightness; sleep 1s; done > "$panel_fifo" &
+bspc subscribe report > "$panel_fifo" &
 
 while read -r line ; do
     case $line in
@@ -64,6 +65,96 @@ while read -r line ; do
         Brightness*)
             br="${line:11}"
             ;;
+        W*)
+            wm=""    # Clear the string each iteration
+            IFS=":"  # Set the Internal Field Separator
+            set -- ${line:1}    # Strip the leading W
+            while [ $# -gt 0 ] ; do  # While the number of command-line arguments is not 0
+                item=$1
+                name=${item:1}
+                case $item in
+                    [mM]*)
+                        case $item in
+                            m*)
+                                # monitor
+                                FG=$foreground
+                                BG=$background
+                                on_focused_monitor=
+                                ;;
+                            M*)
+                                # focused monitor
+                                FG=$foreground
+                                BG=$background
+                                on_focused_monitor=1
+                                ;;
+                        esac
+                        ;;
+                    [fFoOuU]*)
+                        case $item in
+                            f*)
+                                # free desktop
+                                FG=$foreground
+                                BG=$background
+                                UL=$red
+                                ;;
+                            F*)
+                                if [ "$on_focused_monitor" ] ; then
+                                    # focused free desktop
+                                    FG=$cyan
+                                    BG=$background
+                                    UL=$green
+                                else
+                                    # active free desktop
+                                    FG=$foreground
+                                    BG=$background
+                                    UL=$red
+                                fi
+                                ;;
+                            o*)
+                                # occupied desktop
+                                FG=$foreground
+                                BG=$background
+                                UL=$blue
+                                ;;
+                            O*)
+                                if [ "$on_focused_monitor" ] ; then
+                                    # focused occupied desktop
+                                    FG=$cyan
+                                    BG=$background
+                                    UL=$green
+                                else
+                                    # active occupied desktop
+                                    FG=$foreground
+                                    BG=$background
+                                    UL=$green
+                                fi
+                                ;;
+                            u*)
+                                # urgent desktop
+                                FG=$foreground
+                                BG=$background
+                                UL=$red
+                                ;;
+                            U*)
+                                if [ "$on_focused_monitor" ] ; then
+                                    # focused urgent desktop
+                                    FG=$foreground
+                                    BG=$background
+                                    UL=$red
+                                else
+                                    # active urgent desktop
+                                    FG=$foreground
+                                    BG=$background
+                                    UL=$red
+                                fi
+                                ;;
+                        esac
+                        wm="${wm}%{B${BG}}%{F${FG}}%{U${UL}} ${name} "
+                        ;;
+                esac
+                shift
+            done
+            ;;
     esac
-    echo "%{l}test%{c+u}test1%{r+u} [$br] [$vm] [$bt] [$wl] [$cl] "
+    echo "%{l+u}${wm}%{r+u} [${br}] [${vm}] [${bt}] [${wl}] [${cl}] "
 done < "$panel_fifo" | lemonbar -f "$panel_font" -U "$red" -B "$background" -F "$foreground" -g "$panel_width"x"$panel_height"+"$panel_horizontal_offset"+"$panel_vertical_offset" -n "$panel_wm_name" | sh &
