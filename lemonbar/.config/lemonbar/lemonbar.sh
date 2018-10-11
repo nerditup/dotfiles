@@ -42,7 +42,7 @@ volume() {
 
 # Battery
 battery() {
-    echo "Battery BT:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery.sh)
+    echo "Battery B:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery.sh)
 }
 
 # Brightness
