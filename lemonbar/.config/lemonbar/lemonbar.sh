@@ -19,8 +19,7 @@ PANEL_HEIGHT=28
 PANEL_WIDTH=1920
 PANEL_HORIZONTAL_OFFSET=0
 PANEL_VERTICAL_OFFSET=0
-PANEL_FONT="DejavuSansMono:size=8"
-GLYPH_FONT="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+PANEL_FONT="-misc-dejavu sans mono-medium-r-normal--0-80-0-0-m-0-iso10646-1"
 
 # Setup a FIFO such that the info is updating at different intervals, ie. when they change.
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
@@ -38,18 +37,24 @@ network() {
 
 # Volume
 volume() {
-    echo "Volume "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/volume.sh)
+    echo "Volume V:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/volume.sh)
 }
 
 # Battery
 battery() {
-    echo "Battery "$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery.sh)
+    echo "Battery BT:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/battery.sh)
+}
+
+# Brightness
+brightness() {
+    echo "Brightness BL:"$(~/dotfiles/lemonbar/.config/lemonbar/blocks/brightness.sh)
 }
 
 while :; do clock; sleep 60s; done > "$PANEL_FIFO" &
 while :; do network; sleep 10s; done > "$PANEL_FIFO" &
 while :; do battery; sleep 10s; done > "$PANEL_FIFO" &
 while :; do volume; sleep 0.05s; done > "$PANEL_FIFO" &
+while :; do brightness; sleep 1s; done > "$PANEL_FIFO" &
 
 while read -r line ; do
     case $line in
@@ -65,6 +70,9 @@ while read -r line ; do
         Volume*)
             vm="${line:7}"
             ;;
+        Brightness*)
+            br="${line:11}"
+            ;;
     esac
-    echo "%{l}test%{c+u}test1%{r+u} [$vm] [$bt] [$wl] [$cl] "
-done < "$PANEL_FIFO" | lemonbar -o 0 -f "$PANEL_FONT" -o -1 -f "$GLYPH_FONT" -U "$RED" -B "$BACKGROUND" -F "$FOREGROUND" -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" -n "$PANEL_WM_NAME" | sh &
+    echo "%{l}test%{c+u}test1%{r+u} [$br] [$vm] [$bt] [$wl] [$cl] "
+done < "$PANEL_FIFO" | lemonbar -f "$PANEL_FONT" -U "$RED" -B "$BACKGROUND" -F "$FOREGROUND" -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" -n "$PANEL_WM_NAME" | sh &

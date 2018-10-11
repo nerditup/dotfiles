@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo -n "$(date "+%l:%M %p")"
+echo -n "$(date +"%a %l:%M %p")"
