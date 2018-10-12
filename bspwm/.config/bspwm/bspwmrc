@@ -35,6 +35,7 @@ bspc rule -a Firefox desktop='^2' follow=on focus=on
 
 ## Workspace 3 (file-manager)
 bspc rule -a Thunar desktop='^3' follow=on focus=on
+bspc rule -a keepassxc desktop='^3' follow=on focus=on
 
 ## Workspace 4 (text-editors)
 
