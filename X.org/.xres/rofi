@@ -18,3 +18,4 @@ rofi.yoffset:           0
 rofi.xoffset:           0
 rofi.width:             100
 rofi.font:              DejavuSansMono 18
+rofi.modi:              window,run,drun

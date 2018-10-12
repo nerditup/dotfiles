@@ -31,7 +31,7 @@ xsetroot -cursor_name left_ptr
 bspc rule -a URxvt desktop='^1' follow=on focus=on
 
 ## Workspace 2 (web browsers)
-bspc rule -a Firefox-esr desktop='^2' follow=on focus=on
+bspc rule -a Firefox desktop='^2' follow=on focus=on
 
 ## Workspace 3 (file-manager)
 bspc rule -a Thunar desktop='^3' follow=on focus=on
@@ -49,6 +49,7 @@ bspc rule -a Lxappearance desktop='^8' state=floating follow=on
 
 ## Must be floating.
 bspc rule -a feh state=floating follow=on
+bspc rule -a keepassxc state=floating follow=on
 
 ################
 ## Auto Start ##
