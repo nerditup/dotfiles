@@ -31,6 +31,9 @@ magenta=$(get_colour_code 'color5');
 cyan=$(get_colour_code 'color6');
 white=$(get_colour_code 'color7');
 
+# Ensure Lemonbar closes with X.
+#trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
 # Setup a FIFO such that the info is updating at different intervals, ie. when they change.
 [ -e "$panel_fifo" ] && rm "$panel_fifo"
 mkfifo "$panel_fifo"
