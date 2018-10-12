@@ -46,7 +46,5 @@ xbindkeys &
 urxvtd -q -f &
 # Automounter
 udiskie &
-# Wallpaper
-$HOME/.config/feh/fehbg.sh &
 # Window Manager
 exec bspwm

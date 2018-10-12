@@ -61,3 +61,6 @@ sxhkd &
 # System Bar
 pkill lemonbar
 $HOME/.config/lemonbar/lemonbar.sh &
+
+# Wallpaper
+$HOME/.config/feh/fehbg.sh &
