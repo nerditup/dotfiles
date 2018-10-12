@@ -176,6 +176,6 @@ while read -r line ; do
             ;;
     esac
 
-    echo "%{l}${wm}%{r} [${br}] [${vm}] [${bt}] [${wl}] [${cl}] "
+    echo "%{l}${wm}%{r} ${wl} ${br} ${vm} ${bt} ${cl} "
 
 done < "$panel_fifo" | lemonbar -f "$panel_font" -B "$background" -F "$foreground" -g "$panel_width"x"$panel_height"+"$panel_horizontal_offset"+"$panel_vertical_offset" -n "$panel_wm_name" | sh &
