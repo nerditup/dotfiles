@@ -48,7 +48,5 @@ urxvtd -q -f &
 udiskie &
 # Wallpaper
 $HOME/.config/feh/fehbg.sh &
-# Bar
-$HOME/.config/lemonbar/lemonbar.sh &
 # Window Manager
 exec bspwm
