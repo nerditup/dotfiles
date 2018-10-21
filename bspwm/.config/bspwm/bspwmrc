@@ -27,30 +27,30 @@ xsetroot -cursor_name left_ptr
 ## Window Rules ##
 ##################
 
-## Workspace 1 (labs)
+## Workspace 1
 bspc rule -a URxvt desktop='^1' follow=on focus=on
 
-## Workspace 2 (web browsers)
+## Workspace 2
 bspc rule -a Firefox desktop='^2' follow=on focus=on
 
-## Workspace 3 (file-manager)
-bspc rule -a Thunar desktop='^3' follow=on focus=on
+## Workspace 3
 bspc rule -a keepassxc desktop='^3' follow=on focus=on
 
-## Workspace 4 (text-editors)
+## Workspace 4
 
-## Workspace 5 (graphic-utilities)
+## Workspace 5
 
-## Workspace 6 (multimedia)
+## Workspace 6
 
-## Workspace 7 (graphics-editors)
+## Workspace 7
 
-## Workspace 8 (system-settings)
+## Workspace 8
 bspc rule -a Lxappearance desktop='^8' state=floating follow=on
 
 ## Must be floating.
 bspc rule -a feh state=floating follow=on
 bspc rule -a keepassxc state=floating follow=on
+bspc rule -a anki state=floating follow=on
 
 ################
 ## Auto Start ##
