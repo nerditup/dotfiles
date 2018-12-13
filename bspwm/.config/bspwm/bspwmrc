@@ -50,7 +50,7 @@ bspc rule -a Lxappearance desktop='^8' state=floating follow=on
 ## Must be floating.
 bspc rule -a feh state=floating follow=on
 bspc rule -a keepassxc state=floating follow=on
-bspc rule -a anki state=floating follow=on
+bspc rule -a Anki state=floating follow=on
 
 ################
 ## Auto Start ##
