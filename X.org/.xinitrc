@@ -39,7 +39,7 @@ fi
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 # Composite Manager
-compton -b --config $HOME/.config/compton/compton.conf &
+compton -b --config $HOME/.config/compton/compton.conf
 # Keyboard Function Keys
 xbindkeys &
 # Terminal Emulator Daemon
