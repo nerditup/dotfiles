@@ -47,4 +47,4 @@ urxvtd -q -f &
 # Automounter
 udiskie &
 # Window Manager
-exec bspwm
+exec i3
