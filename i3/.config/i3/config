@@ -21,6 +21,7 @@ for_window [window_type="dialog"]      floating enable
 for_window [window_type="menu"]        floating enable
 
 # Specific window configuration
+for_window [class="URxvt"] floating enable
 for_window [class="keepassxc"] floating enable
 
 # Add a Status Bar
