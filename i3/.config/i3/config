@@ -1,6 +1,14 @@
 # Set font
 font pango: DejaVu Sans Mono 18
 
+# Title bars with padding.
+#
+# We first set the titlebar font size to a larger font size than desired
+# to get a good padding amount. We then use pango markup to force i3 to
+# print the desired font size. This gives us large titlebars with a small
+# font.
+for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'> > %title</span>"
+
 # Add a gap between windows
 gaps inner 15
 gaps outer 20 
@@ -24,6 +32,9 @@ for_window [window_type="menu"]        floating enable
 for_window [class="URxvt"] floating enable
 for_window [class="keepassxc"] floating enable
 
+# Assign windows to specific workspaces
+assign [class="Firefox"] → 2
+
 # Add a Status Bar
 bar {
     status_command      i3status
@@ -46,14 +57,6 @@ bar {
 
 # Use Windows as a modifier key
 set $mod Mod4
-
-# Title bars with padding.
-#
-# We first set the titlebar font size to a larger font size than desired
-# to get a good padding amount. We then use pango markup to force i3 to
-# print the desired font size. This gives us large titlebars with a small
-# font.
-for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'> > %title</span>"
 
 # Set global foreground and background colors, using a fallback if it
 # cannot be found.
