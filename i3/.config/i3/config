@@ -7,7 +7,7 @@ font pango: DejaVu Sans Mono 18
 # to get a good padding amount. We then use pango markup to force i3 to
 # print the desired font size. This gives us large titlebars with a small
 # font.
-for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'> > %title</span>"
+for_window [class=".*"] title_format "<span font='DejaVu Sans Mono 10'></span>"
 
 # Add a gap between windows
 gaps inner 15
