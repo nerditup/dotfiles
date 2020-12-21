@@ -1,0 +1,6 @@
+[user]
+    name = Craig Sloggett
+    email = craigsloggett@gmail.com
+    signingkey = 8CB47A3C0E6F3C1B42E44950A0BBEAA8FFD4AF87
+[commit]
+    gpgsign = true
