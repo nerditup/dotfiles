@@ -19,6 +19,7 @@ colorscheme desert
 
 " Syntax Highlighting
 syntax enable               " enable syntax processing
+let g:is_bash = 1           " $( ... ) is perfectly fine for POSIX.
 
 " Spaces & Tabs
 set tabstop=4               " number of visual spaces per TAB
